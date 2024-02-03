@@ -21,7 +21,7 @@ function MainNavigation() {
               to="/basketball"
               className={(isActive) => (isActive ? classes.active : undefined)}
             >
-              Basketball
+              &#127936; Basketball
             </NavLink>
           </li>
           <li>
@@ -29,7 +29,7 @@ function MainNavigation() {
               to="/football"
               className={(isActive) => (isActive ? classes.active : undefined)}
             >
-              Football
+              &#9917; Football
             </NavLink>
           </li>
           <li>
@@ -37,7 +37,15 @@ function MainNavigation() {
               to="volleyball"
               className={(isActive) => (isActive ? classes.active : undefined)}
             >
-              Volleyball
+              &#127952; Volleyball
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="tennis"
+              className={(isActive) => (isActive ? classes.active : undefined)}
+            >
+              &#127934; Tennis
             </NavLink>
           </li>
         </ul>

@@ -1,21 +1,13 @@
 import { NavLink } from "react-router-dom";
 
 import classes from "./MainNavigation.module.css";
+import logoImg from "../assets/logo3.png";
 
 function MainNavigation() {
   return (
     <header className={classes.header}>
       <nav>
         <ul className={classes.list}>
-          {/* <li>
-            <NavLink
-              to="/"
-              className={(isActive) => (isActive ? classes.active : undefined)}
-              end
-            >
-              Home
-            </NavLink>
-          </li> */}
           <li>
             <NavLink
               to="/basketball"
@@ -30,6 +22,13 @@ function MainNavigation() {
               className={(isActive) => (isActive ? classes.active : undefined)}
             >
               &#9917; Football
+            </NavLink>
+          </li>
+          <li className={classes["centered-logo"]}>
+            <NavLink to="/" end>
+              <div className={classes.logo}>
+                <img src={logoImg} alt="Site logo" />
+              </div>
             </NavLink>
           </li>
           <li>

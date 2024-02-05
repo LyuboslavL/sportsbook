@@ -1,5 +1,6 @@
 .content {
   text-align: center;
+  min-height: 85vh;
 }
 
 .content h1 {
@@ -9,9 +10,5 @@
 
 .content p {
   color: black;
+  padding-bottom: 2.5rem;
 }
-
-/* img {
-  object-fit: contain;
-  border: 2px solid #ffc404;
-} */

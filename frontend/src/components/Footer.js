@@ -1,60 +1,58 @@
+import { Link } from "react-router-dom";
+
 import classes from "./Footer.module.css";
 
 function Footer() {
   return (
     <footer>
       <div className={classes["footer-content"]}>
-        <h3>Foolish Developer</h3>
+        <h3>SportsBook</h3>
         <p>
-          Raj Template is a blog website where you will find great tutorials on
-          web design and development. Here each tutorial is beautifully
-          described step by step with the required source code.
+          SportsBook is a place where individuals can book fields or courts to
+          play their favorite sport. We cover 4 sports categories and we operate
+          in 3 different cities in Bulgaria.
         </p>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        ></link>
         <ul className={classes.socials}>
           <li>
-            <a href="#">
+            <Link to="#">
               <i className="fa fa-facebook"></i>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#">
+            <Link to="#">
               <i className="fa fa-twitter"></i>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#">
-              <i className="fa fa-google-plus"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
+            <Link to="#">
               <i className="fa fa-youtube"></i>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#">
+            <Link to="#">
               <i className="fa fa-linkedin-square"></i>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
       <div className={classes["footer-bottom"]}>
         <p>
-          copyright &copy; <a href="#">Foolish Developer</a>{" "}
+          copyright &copy; <Link to="/">SportsBook</Link>
         </p>
         <div className={classes["footer-menu"]}>
           <ul className={classes["f-menu"]}>
             <li>
-              <a href="">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="">About</a>
+              <Link to="/about">About</Link>
             </li>
             <li>
-              <a href="">Contact</a>
-            </li>
-            <li>
-              <a href="">Blog</a>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </div>

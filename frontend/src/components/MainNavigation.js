@@ -7,7 +7,7 @@ function MainNavigation() {
     <header className={classes.header}>
       <nav>
         <ul className={classes.list}>
-          <li>
+          {/* <li>
             <NavLink
               to="/"
               className={(isActive) => (isActive ? classes.active : undefined)}
@@ -15,7 +15,7 @@ function MainNavigation() {
             >
               Home
             </NavLink>
-          </li>
+          </li> */}
           <li>
             <NavLink
               to="/basketball"

@@ -1,3 +1,13 @@
 .content {
   text-align: center;
 }
+
+.content h1 {
+  color: #c79800;
+  font-size: 75px;
+}
+
+img {
+  object-fit: contain;
+  border: 2px solid #ffc404;
+}

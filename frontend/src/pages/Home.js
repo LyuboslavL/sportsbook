@@ -5,8 +5,10 @@ function HomePage() {
   return (
     <PageContent title="SportsBook">
       <img src={coverImg} alt="Sports" />
-      <p>Choose Your Sport</p>
-      <p>Your Sport, Your Passion, Your Rules</p>
+      <h2>Your Sport, Your Passion, Your Rules</h2>
+      <p>
+        Find and book a place, gather your team and enjoy your favorite sport.
+      </p>
     </PageContent>
   );
 }

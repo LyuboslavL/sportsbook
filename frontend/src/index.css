@@ -39,8 +39,14 @@
   --color-primary-900: #f6ad1b;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  background: #fcfcfc;
+  font-family: sans-serif;
 }
 
 ul {

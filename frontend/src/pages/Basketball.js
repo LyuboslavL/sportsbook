@@ -32,7 +32,6 @@ const DUMMY_PLACES = [
 ];
 
 function BasketballPage() {
-  console.log(DUMMY_PLACES);
   return <PlacesList places={DUMMY_PLACES} />;
 }
 

@@ -7,6 +7,7 @@ import BasketballPage from "./pages/Basketball";
 import FootballPage from "./pages/Football";
 import VolleyballPage from "./pages/Volleyball";
 import TennisPage from "./pages/Tennis";
+import ContactPage, { action as contactAction } from "./pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       { path: "football", element: <FootballPage />, children: [] },
       { path: "volleyball", element: <VolleyballPage />, children: [] },
       { path: "tennis", element: <TennisPage />, children: [] },
+      { path: "contact", element: <ContactPage />, action: contactAction },
     ],
   },
 ]);

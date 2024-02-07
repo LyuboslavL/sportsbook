@@ -7,7 +7,7 @@ function Place({ place }) {
         <img src={place.img} alt="Sports Field" />
         <div>
           <h3>{place.name}</h3>
-          <p className={classes["place-price"]}>{place.price}</p>
+          <p className={classes["place-price"]}>{place.price} BGN / hour</p>
           <p className={classes["place-address"]}>{place.address}</p>
         </div>
       </article>

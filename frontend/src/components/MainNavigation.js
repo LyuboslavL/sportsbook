@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import classes from "./MainNavigation.module.css";
 import logoImg from "../assets/logo3.png";
 
+import ProfileButton from "./ProfileButton";
+
 function MainNavigation() {
   return (
     <header className={classes.header}>
@@ -49,6 +51,7 @@ function MainNavigation() {
           </li>
         </ul>
       </nav>
+      <ProfileButton />
     </header>
   );
 }

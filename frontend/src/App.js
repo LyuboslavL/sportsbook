@@ -4,9 +4,9 @@ import RootLayout from "./pages/Root";
 import ErrorPage from "./pages/Error";
 import HomePage from "./pages/Home";
 import BasketballPage, { loader as basketballLoader } from "./pages/Basketball";
-import FootballPage from "./pages/Football";
-import VolleyballPage from "./pages/Volleyball";
-import TennisPage from "./pages/Tennis";
+import FootballPage, { loader as footballLoader } from "./pages/Football";
+import VolleyballPage, { loader as volleyballLoader } from "./pages/Volleyball";
+import TennisPage, { loader as tennisLoader } from "./pages/Tennis";
 import ContactPage, { action as contactAction } from "./pages/Contact";
 
 const router = createBrowserRouter([
@@ -22,9 +22,24 @@ const router = createBrowserRouter([
         loader: basketballLoader,
         children: [],
       },
-      { path: "football", element: <FootballPage />, children: [] },
-      { path: "volleyball", element: <VolleyballPage />, children: [] },
-      { path: "tennis", element: <TennisPage />, children: [] },
+      {
+        path: "football",
+        element: <FootballPage />,
+        loader: footballLoader,
+        children: [],
+      },
+      {
+        path: "volleyball",
+        element: <VolleyballPage />,
+        loader: volleyballLoader,
+        children: [],
+      },
+      {
+        path: "tennis",
+        element: <TennisPage />,
+        loader: tennisLoader,
+        children: [],
+      },
       { path: "contact", element: <ContactPage />, action: contactAction },
     ],
   },

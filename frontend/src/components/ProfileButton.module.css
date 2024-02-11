@@ -1,9 +1,9 @@
 .button {
+  position: absolute;
   cursor: pointer;
   border: none;
-  position: absolute;
-  right: 80px;
-  top: 50px;
+  right: -160px;
+  top: 6px;
   background-color: #ffffff;
   color: rgb(2, 2, 2);
   padding: 0.9rem 2rem;
@@ -20,8 +20,8 @@
 }
 
 .icon {
-  width: 1.95rem;
-  height: 1.35rem;
+  width: 2.5rem;
+  height: 2rem;
   margin-right: 0.5rem;
 }
 

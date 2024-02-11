@@ -1,6 +1,5 @@
 import classes from "./ProfileButton.module.css";
 
-import ProfilePicIcon from "./ProfilePicIcon";
 import profileLogo from "../assets/profile.png";
 
 function ProfileButton() {

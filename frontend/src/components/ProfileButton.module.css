@@ -1,9 +1,33 @@
+.dropdown {
+  width: 100px;
+}
+
+.dropdown .item {
+  display: none;
+}
+
+.dropdown:hover .item {
+  display: block;
+  position: absolute;
+  width: 160px;
+  height: 120px;
+  top: 4rem;
+  right: -10.5rem;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: white;
+  border: 1px solid grey;
+  color: black;
+  /* text-align: center; */
+  line-height: 2;
+}
+
 .button {
   position: absolute;
   cursor: pointer;
   border: none;
-  right: -160px;
-  top: 6px;
+  right: -180px;
+  top: 10px;
   background-color: #ffffff;
   color: rgb(2, 2, 2);
   padding: 0.9rem 2rem;
@@ -15,9 +39,9 @@
 }
 
 .icon {
-  width: 2.5rem;
-  height: 2rem;
-  margin-right: 0.5rem;
+  width: 2rem;
+  height: 1.7rem;
+  /* margin-right: 0.5rem; */
 }
 
 .badge {

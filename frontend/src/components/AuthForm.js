@@ -1,12 +1,22 @@
-import { Form } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 
 import classes from "./AuthForm.module.css";
 
-function AuthForm() {
+function AuthForm({ action }) {
   return (
     <>
-      <Form className={classes.form}>
-        <h1>Login / Register</h1>
+      <Form method="POST" className={classes.form}>
+        <h1>
+          <strong>{action}</strong>
+        </h1>
+        {action === "Login" && (
+          <p>
+            New user?{" "}
+            <span>
+              <Link to="/register">Create an account</Link>
+            </span>
+          </p>
+        )}
         <p>
           <label htmlFor="email">Email</label>
           <input id="email" type="email" name="email" required />

@@ -8,8 +8,8 @@ import FootballPage, { loader as footballLoader } from "./pages/Football";
 import VolleyballPage, { loader as volleyballLoader } from "./pages/Volleyball";
 import TennisPage, { loader as tennisLoader } from "./pages/Tennis";
 import ContactPage, { action as contactAction } from "./pages/Contact";
-import LoginPage from "./pages/Login";
-import RegisterPage from "./pages/Register";
+import LoginPage, { action as loginAction } from "./pages/Login";
+import RegisterPage, { action as registerAction } from "./pages/Register";
 import { checkAuthLoader, tokenLoader } from "./util/auth";
 
 const router = createBrowserRouter([
@@ -45,8 +45,8 @@ const router = createBrowserRouter([
         children: [],
       },
       { path: "contact", element: <ContactPage />, action: contactAction },
-      { path: "login", element: <LoginPage /> },
-      { path: "register", element: <RegisterPage /> },
+      { path: "login", element: <LoginPage />, action: loginAction },
+      { path: "register", element: <RegisterPage />, action: registerAction },
     ],
   },
 ]);

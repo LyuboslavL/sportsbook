@@ -1,8 +1,10 @@
-import { Form, Link } from "react-router-dom";
+import { Form, Link, useActionData } from "react-router-dom";
 
 import classes from "./AuthForm.module.css";
 
 function AuthForm({ action }) {
+  const data = useActionData();
+
   return (
     <>
       <Form method="POST" className={classes.form}>
@@ -25,6 +27,9 @@ function AuthForm({ action }) {
           <label htmlFor="image">Password</label>
           <input id="password" type="password" name="password" required />
         </p>
+        <div className={classes.actions}>
+          <button>Login</button>
+        </div>
       </Form>
     </>
   );

@@ -9,12 +9,14 @@ import VolleyballPage, { loader as volleyballLoader } from "./pages/Volleyball";
 import TennisPage, { loader as tennisLoader } from "./pages/Tennis";
 import ContactPage, { action as contactAction } from "./pages/Contact";
 import AuthenticationPage from "./pages/Authentication";
+import { checkAuthLoader, tokenLoader } from "./util/auth";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
     errorElement: <ErrorPage />,
+    loader: tokenLoader,
     children: [
       { index: true, element: <HomePage /> },
       {

@@ -18,16 +18,16 @@ export async function action({ request }) {
     password: data.get("password"),
   };
 
-  await signInWithEmailAndPassword(auth, authData.email, authData.password);
-  // .then((userCredential) => {
-  //   // Signed in
-  //   const user = userCredential.user;
-  //   // ...
-  // })
-  // .catch((error) => {
-  //   const errorCode = error.code;
-  //   const errorMessage = error.message;
-  // });
+  signInWithEmailAndPassword(auth, authData.email, authData.password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+    });
 
   redirect("/");
 }

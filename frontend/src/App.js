@@ -10,7 +10,6 @@ import TennisPage, { loader as tennisLoader } from "./pages/Tennis";
 import ContactPage, { action as contactAction } from "./pages/Contact";
 import LoginPage, { action as loginAction } from "./pages/Login";
 import RegisterPage, { action as registerAction } from "./pages/Register";
-import { action as logoutAction } from "./pages/Logout";
 // import { checkTokenLoader } from "./util/auth";
 
 const router = createBrowserRouter([
@@ -58,7 +57,6 @@ const router = createBrowserRouter([
         action: registerAction,
         // loader: checkTokenLoader,
       },
-      { path: "logout", action: logoutAction },
     ],
   },
 ]);

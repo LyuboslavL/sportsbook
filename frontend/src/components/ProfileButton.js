@@ -1,3 +1,7 @@
+import { signOut } from "firebase/auth";
+import { auth } from "../firebaseConfig";
+import { redirect } from "react-router-dom";
+
 import classes from "./ProfileButton.module.css";
 import profileLogo from "../assets/profile.png";
 
@@ -5,6 +9,17 @@ import { checkTokenLoader } from "../util/auth";
 
 function ProfileButton() {
   const token = checkTokenLoader();
+
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        redirect("/");
+        console.log("Signed out successfully");
+      })
+      .catch((err) => {
+        // An error occured
+      });
+  };
 
   return (
     <div className={classes.dropdown}>
@@ -17,7 +32,7 @@ function ProfileButton() {
             <li>Profile</li>
             <li>Reservations</li>
           </ul>
-          <button>Logout</button>
+          <button onClick={handleLogout}>Logout</button>
         </div>
       )}
       {!token && (

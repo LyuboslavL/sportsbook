@@ -13,18 +13,17 @@ export async function action({ request }) {
   const auth = getAuth();
 
   const data = await request.formData();
-  // console.log(data);
   const authData = {
     email: data.get("email"),
     password: data.get("password"),
   };
 
-  // console.log(authData);
-
-  createUserWithEmailAndPassword(auth, authData.email, authData.password)
+  await createUserWithEmailAndPassword(auth, authData.email, authData.password)
     .then((userCredential) => {
       // Signed up
       const user = userCredential.user;
+      console.log(user.uid);
+      localStorage.setItem("token", user.uid);
       // ...
     })
     .catch((error) => {

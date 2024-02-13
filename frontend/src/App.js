@@ -10,14 +10,15 @@ import TennisPage, { loader as tennisLoader } from "./pages/Tennis";
 import ContactPage, { action as contactAction } from "./pages/Contact";
 import LoginPage, { action as loginAction } from "./pages/Login";
 import RegisterPage, { action as registerAction } from "./pages/Register";
-import { checkAuthLoader, tokenLoader } from "./util/auth";
+import { action as logoutAction } from "./pages/Logout";
+// import { checkTokenLoader } from "./util/auth";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
     errorElement: <ErrorPage />,
-    loader: tokenLoader,
+    // loader: checkTokenLoader,
     children: [
       { index: true, element: <HomePage /> },
       {
@@ -45,8 +46,19 @@ const router = createBrowserRouter([
         children: [],
       },
       { path: "contact", element: <ContactPage />, action: contactAction },
-      { path: "login", element: <LoginPage />, action: loginAction },
-      { path: "register", element: <RegisterPage />, action: registerAction },
+      {
+        path: "login",
+        element: <LoginPage />,
+        action: loginAction,
+        // loader: checkTokenLoader,
+      },
+      {
+        path: "register",
+        element: <RegisterPage />,
+        action: registerAction,
+        // loader: checkTokenLoader,
+      },
+      { path: "logout", action: logoutAction },
     ],
   },
 ]);

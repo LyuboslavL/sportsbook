@@ -10,7 +10,6 @@ function RegisterPage() {
 export default RegisterPage;
 
 export async function action({ request }) {
-  console.log("here");
   const auth = getAuth();
 
   const data = await request.formData();

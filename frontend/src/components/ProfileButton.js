@@ -7,7 +7,6 @@ import profileLogo from "../assets/profile.png";
 
 function ProfileButton() {
   const token = localStorage.getItem("token");
-  console.log(token);
 
   const handleLogout = () => {
     signOut(auth)

@@ -1,12 +1,18 @@
 import { signOut } from "firebase/auth";
 import { auth } from "../firebaseConfig";
-import { redirect, useRouteLoaderData, Link } from "react-router-dom";
+import { redirect, useRouteLoaderData, NavLink } from "react-router-dom";
 
 import classes from "./ProfileButton.module.css";
 import profileLogo from "../assets/profile.png";
 
 function ProfileButton() {
+  // const [authToken, setToken] = useState("");
+
   const token = localStorage.getItem("token");
+
+  // if (token) {
+  //   setToken(token);
+  // }
 
   const handleLogout = () => {
     signOut(auth)
@@ -29,15 +35,19 @@ function ProfileButton() {
       {token && (
         <div className={classes.item}>
           <ul>
-            <li>Profile</li>
-            <li>Reservations</li>
+            <li>
+              <NavLink to="/profile">Profile</NavLink>
+            </li>
+            <li>
+              <NavLink to="/reservations">Reservations</NavLink>
+            </li>
           </ul>
           <button onClick={handleLogout}>Logout</button>
         </div>
       )}
       {!token && (
         <div className={classes.item}>
-          <Link to="/login">Login / Register</Link>
+          <NavLink to="/login">Login / Register</NavLink>
         </div>
       )}
     </div>

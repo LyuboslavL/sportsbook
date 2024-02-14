@@ -1,4 +1,5 @@
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebaseConfig";
 import { redirect } from "react-router-dom";
 
 import AuthForm from "../components/AuthForm";
@@ -10,7 +11,7 @@ function RegisterPage() {
 export default RegisterPage;
 
 export async function action({ request }) {
-  const auth = getAuth();
+  // const auth = getAuth();
 
   const data = await request.formData();
   const authData = {

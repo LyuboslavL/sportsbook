@@ -1,4 +1,5 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebaseConfig";
 import { redirect } from "react-router-dom";
 
 import AuthForm from "../components/AuthForm";

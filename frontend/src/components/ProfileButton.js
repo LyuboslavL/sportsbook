@@ -1,24 +1,25 @@
 import { signOut } from "firebase/auth";
 import { auth } from "../firebaseConfig";
-import { redirect } from "react-router-dom";
+import { redirect, useRouteLoaderData, Link } from "react-router-dom";
 
 import classes from "./ProfileButton.module.css";
 import profileLogo from "../assets/profile.png";
 
-import { checkTokenLoader } from "../util/auth";
-
 function ProfileButton() {
-  const token = checkTokenLoader();
+  const token = localStorage.getItem("token");
+  console.log(token);
 
   const handleLogout = () => {
     signOut(auth)
       .then(() => {
-        redirect("/");
-        console.log("Signed out successfully");
+        localStorage.removeItem("token");
+        // console.log("Signed out successfully");
       })
       .catch((err) => {
         // An error occured
       });
+
+    return redirect("/football");
   };
 
   return (
@@ -37,7 +38,7 @@ function ProfileButton() {
       )}
       {!token && (
         <div className={classes.item}>
-          <button>Login / Register</button>
+          <Link to="/login">Login / Register</Link>
         </div>
       )}
     </div>

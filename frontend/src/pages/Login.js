@@ -22,12 +22,13 @@ export async function action({ request }) {
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-      // ...
+      localStorage.setItem("token", user.uid);
     })
     .catch((error) => {
-      const errorCode = error.code;
+      // const errorCode = error.code;
       const errorMessage = error.message;
+      alert(errorMessage);
     });
 
-  redirect("/");
+  return redirect("/");
 }

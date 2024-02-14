@@ -10,14 +10,12 @@ import TennisPage, { loader as tennisLoader } from "./pages/Tennis";
 import ContactPage, { action as contactAction } from "./pages/Contact";
 import LoginPage, { action as loginAction } from "./pages/Login";
 import RegisterPage, { action as registerAction } from "./pages/Register";
-// import { checkTokenLoader } from "./util/auth";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
     errorElement: <ErrorPage />,
-    // loader: checkTokenLoader,
     children: [
       { index: true, element: <HomePage /> },
       {
@@ -49,13 +47,11 @@ const router = createBrowserRouter([
         path: "login",
         element: <LoginPage />,
         action: loginAction,
-        // loader: checkTokenLoader,
       },
       {
         path: "register",
         element: <RegisterPage />,
         action: registerAction,
-        // loader: checkTokenLoader,
       },
     ],
   },

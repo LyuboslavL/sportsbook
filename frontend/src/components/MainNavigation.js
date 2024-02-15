@@ -1,4 +1,4 @@
-import { NavLink, useRouteLoaderData } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import classes from "./MainNavigation.module.css";
 import logoImg from "../assets/logo3.png";
@@ -6,9 +6,6 @@ import logoImg from "../assets/logo3.png";
 import ProfileButton from "./ProfileButton";
 
 function MainNavigation() {
-  const token = useRouteLoaderData("root");
-  console.log(token);
-
   return (
     <header className={classes.header}>
       <nav>
@@ -54,7 +51,7 @@ function MainNavigation() {
           </li>
         </ul>
       </nav>
-      <ProfileButton token={token} />
+      <ProfileButton />
     </header>
   );
 }

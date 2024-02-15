@@ -1,19 +1,15 @@
-// import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { redirect } from "react-router-dom";
 
-export function getToken() {
-  // const auth = getAuth();
-  // onAuthStateChanged(auth, (user) => {
-  //   if (user) {
-  //     const uid = user.uid;
-  //     return uid;
-  //   } else {
-  //     return null;
-  //   }
-  // });
+// export function getTokenDuration() {
+//   const storedExpirationDate = localStorage.getItem("expiration");
+//   const expirationDate = new Date(storedExpirationDate);
+//   const now = new Date();
+//   const duration = expirationDate.getTime() - now.getTime();
+//   return duration;
+// }
 
+export function getAuthToken() {
   const token = localStorage.getItem("token");
-  console.log(token);
 
   if (!token) {
     return null;
@@ -23,23 +19,15 @@ export function getToken() {
 }
 
 export function tokenLoader() {
-  return getToken();
+  return getAuthToken();
 }
 
-export function checkTokenLoader() {
-  const token = getToken();
+export function checkAuthLoader() {
+  const token = getAuthToken();
 
   if (!token) {
     return redirect("/login");
   }
 
   return null;
-}
-
-export function getTokenDuration() {
-  const storedExpirationDate = localStorage.getItem("expiration");
-  const expirationDate = new Date(storedExpirationDate);
-  const now = new Date();
-  const duration = expirationDate.getTime() - now.getTime();
-  return duration;
 }

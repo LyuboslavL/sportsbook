@@ -14,7 +14,6 @@ function ProfileButton() {
     signOut(auth)
       .then(() => {
         localStorage.removeItem("token");
-        console.log("Signed out successfully");
         navigate("/");
       })
       .catch((err) => {

@@ -11,8 +11,6 @@ function LoginPage() {
 export default LoginPage;
 
 export async function action({ request }) {
-  // const auth = getAuth();
-
   const data = await request.formData();
   const authData = {
     email: data.get("email"),
@@ -26,10 +24,8 @@ export async function action({ request }) {
       localStorage.setItem("token", user.uid);
     })
     .catch((error) => {
-      // const errorCode = error.code;
       const errorMessage = error.message;
       alert(errorMessage);
     });
-
   return redirect("/");
 }

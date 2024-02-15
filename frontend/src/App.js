@@ -10,7 +10,7 @@ import TennisPage, { loader as tennisLoader } from "./pages/Tennis";
 import ContactPage, { action as contactAction } from "./pages/Contact";
 import LoginPage, { action as loginAction } from "./pages/Login";
 import RegisterPage, { action as registerAction } from "./pages/Register";
-import { tokenLoader } from "./util/auth";
+import { checkTokenLoader, tokenLoader } from "./util/auth";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     id: "root",
-    loader: tokenLoader,
+    loader: tokenLoader(),
     children: [
       { index: true, element: <HomePage /> },
       {

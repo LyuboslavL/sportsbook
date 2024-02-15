@@ -1,30 +1,25 @@
 import { signOut } from "firebase/auth";
 import { auth } from "../firebaseConfig";
-import { redirect, useRouteLoaderData, NavLink } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 
 import classes from "./ProfileButton.module.css";
 import profileLogo from "../assets/profile.png";
 
 function ProfileButton() {
-  // const [authToken, setToken] = useState("");
+  const navigate = useNavigate();
 
   const token = localStorage.getItem("token");
-
-  // if (token) {
-  //   setToken(token);
-  // }
 
   const handleLogout = () => {
     signOut(auth)
       .then(() => {
         localStorage.removeItem("token");
-        // console.log("Signed out successfully");
+        console.log("Signed out successfully");
+        navigate("/");
       })
       .catch((err) => {
-        // An error occured
+        alert("Something went wrong!");
       });
-
-    return redirect("/football");
   };
 
   return (

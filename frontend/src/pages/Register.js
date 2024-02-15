@@ -19,7 +19,7 @@ export async function action({ request }) {
     password: data.get("password"),
   };
 
-  await createUserWithEmailAndPassword(auth, authData.email, authData.password)
+  createUserWithEmailAndPassword(auth, authData.email, authData.password)
     .then((userCredential) => {
       // Signed up
       const user = userCredential.user;

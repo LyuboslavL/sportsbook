@@ -1,4 +1,4 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebaseConfig";
 import { redirect } from "react-router-dom";
 
@@ -11,7 +11,7 @@ function LoginPage() {
 export default LoginPage;
 
 export async function action({ request }) {
-  const auth = getAuth();
+  // const auth = getAuth();
 
   const data = await request.formData();
   const authData = {

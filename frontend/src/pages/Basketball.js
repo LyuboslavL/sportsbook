@@ -27,8 +27,8 @@ const TOWNS = [
 function BasketballPage() {
   const basketballPlaces = useLoaderData();
 
-  return <TownsList towns={TOWNS} />;
-  // <PlacesList places={basketballPlaces} />;
+  // return <TownsList towns={TOWNS} />;
+  return <PlacesList places={basketballPlaces} />;
 }
 
 export default BasketballPage;

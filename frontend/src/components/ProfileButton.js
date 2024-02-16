@@ -5,10 +5,11 @@ import { useNavigate, NavLink } from "react-router-dom";
 import classes from "./ProfileButton.module.css";
 import profileLogo from "../assets/profile.png";
 
-function ProfileButton() {
+function ProfileButton(props) {
   const navigate = useNavigate();
 
   const token = localStorage.getItem("token");
+  props.isLoggedIn = true;
 
   const handleLogout = () => {
     signOut(auth)

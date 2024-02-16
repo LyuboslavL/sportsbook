@@ -1,24 +1,34 @@
-// import { Suspense } from "react";
-// import { useLoaderData, json, defer, Await } from "react-router-dom";
-
 "use client";
 import { db } from "../firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
 import { useLoaderData } from "react-router-dom";
 
 import PlacesList from "../components/PlacesList";
+import TownsList from "../components/TownsList";
+
+const TOWNS = [
+  {
+    id: "Sofia",
+    img: "https://i.ytimg.com/vi/zc32qU1qH2c/maxresdefault.jpg",
+    name: "Sofia",
+  },
+  {
+    id: "Plovdiv",
+    img: "https://www.dianamariscostea.ro/public/uploads/904/conversions/large/PLOVDIV-COPERTA.jpeg",
+    name: "Plovdiv",
+  },
+  {
+    id: "Varna",
+    img: "https://kongres-magazine.eu/wp-content/uploads/2020/03/varna-bulgaria_1054165976-1.jpg",
+    name: "Varna",
+  },
+];
 
 function BasketballPage() {
   const basketballPlaces = useLoaderData();
 
-  return <PlacesList places={basketballPlaces} />;
-  // return (
-  //   <Suspense fallback={<p style={{ textAlign: "center" }}>Loading...</p>}>
-  //     <Await resolve={places}>
-  //       {(loadedPlaces) => <PlacesList places={loadedPlaces} />}
-  //     </Await>
-  //   </Suspense>
-  // );
+  return <TownsList towns={TOWNS} />;
+  // <PlacesList places={basketballPlaces} />;
 }
 
 export default BasketballPage;
@@ -32,20 +42,3 @@ export async function loader() {
 
   return data;
 }
-
-// async function loadBasketballPlaces() {
-//   const response = await fetch("http://localhost:8080/events");
-
-//   if (!response.ok) {
-//     throw json({ message: "Could not load places." }, { status: 500 });
-//   } else {
-//     const resData = await response.json();
-//     return resData.events;
-//   }
-// }
-
-// export function loader() {
-//   return defer({
-//     places: loadBasketballPlaces(),
-//   });
-// }

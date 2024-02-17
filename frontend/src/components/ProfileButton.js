@@ -5,7 +5,7 @@ import { useNavigate, NavLink } from "react-router-dom";
 import classes from "./ProfileButton.module.css";
 import profileLogo from "../assets/profile.png";
 
-function ProfileButton(props) {
+function ProfileButton() {
   const navigate = useNavigate();
 
   const token = localStorage.getItem("token");

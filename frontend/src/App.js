@@ -1,7 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { useState, useEffect } from 'react';
 
-import { auth } from './firebaseConfig';
 import RootLayout from "./pages/Root";
 import ErrorPage from "./pages/Error";
 import HomePage from "./pages/Home";
@@ -63,14 +61,6 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  const [currentUser, setCurrentUser] = useState();
-
-  useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      setCurrentUser(user);
-    })
-  }, []);
-
   return <RouterProvider router={router} />;
 }
 

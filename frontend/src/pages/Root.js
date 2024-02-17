@@ -9,12 +9,14 @@ function RootLayout() {
   const [currentUser, setCurrentUser] = useState();
 
   useEffect(() => {
-
-  })
+    auth.onAuthStateChanged((user) => {
+      setCurrentUser(user);
+    })
+  }, [])
 
   return (
     <>
-      <MainNavigation />
+      <MainNavigation user={currentUser} />
       <main>
         <Outlet />
       </main>

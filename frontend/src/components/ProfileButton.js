@@ -9,7 +9,6 @@ function ProfileButton(props) {
   const navigate = useNavigate();
 
   const token = localStorage.getItem("token");
-  props.isLoggedIn = true;
 
   const handleLogout = () => {
     signOut(auth)

@@ -1,9 +1,10 @@
+import { useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom";
 
 import classes from "./MainNavigation.module.css";
 import logoImg from "../assets/logo3.png";
-
 import ProfileButton from "./ProfileButton";
+import { auth } from '../firebaseConfig';
 
 function MainNavigation() {
   return (

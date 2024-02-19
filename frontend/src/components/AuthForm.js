@@ -1,9 +1,21 @@
 import { Form, Link, useActionData } from "react-router-dom";
+import { useState, useRef } from "react";
 
 import classes from "./AuthForm.module.css";
 
 function AuthForm({ action }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  // const emailRef = useRef();
+  // const passwordRef = useRef();
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+
   const data = useActionData();
+
+  const inputChangeHandler = (event) => {
+    console.log(event.target.type);
+  };
 
   return (
     <>
@@ -21,11 +33,27 @@ function AuthForm({ action }) {
         )}
         <p>
           <label htmlFor="email">Email</label>
-          <input id="email" type="email" name="email" required />
+          <input
+            id="email"
+            type="email"
+            name="email"
+            value={email}
+            onChange={inputChangeHandler}
+            // ref={emailRef}
+            required
+          />
         </p>
         <p>
           <label htmlFor="image">Password</label>
-          <input id="password" type="password" name="password" required />
+          <input
+            id="password"
+            type="password"
+            name="password"
+            value={password}
+            onChange={inputChangeHandler}
+            // ref={passwordRef}
+            required
+          />
         </p>
         <div className={classes.actions}>
           <button>Login</button>

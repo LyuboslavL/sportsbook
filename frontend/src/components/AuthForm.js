@@ -1,21 +1,9 @@
 import { Form, Link, useActionData } from "react-router-dom";
-import { useState, useRef } from "react";
 
 import classes from "./AuthForm.module.css";
 
 function AuthForm({ action }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  // const emailRef = useRef();
-  // const passwordRef = useRef();
-  const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
-
-  const data = useActionData();
-
-  const inputChangeHandler = (event) => {
-    console.log(event.target.type);
-  };
+  // const data = useActionData();
 
   return (
     <>
@@ -31,29 +19,21 @@ function AuthForm({ action }) {
             </span>
           </p>
         )}
+        {/* {data && data.errors && (
+          <ul>
+            {Object.values(data.errors).map((err) => (
+              <li key={err}>{err}</li>
+            ))}
+          </ul>
+        )}
+        {data && data.message && <p>{data.message}</p>} */}
         <p>
           <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            type="email"
-            name="email"
-            value={email}
-            onChange={inputChangeHandler}
-            // ref={emailRef}
-            required
-          />
+          <input id="email" type="email" name="email" required />
         </p>
         <p>
           <label htmlFor="image">Password</label>
-          <input
-            id="password"
-            type="password"
-            name="password"
-            value={password}
-            onChange={inputChangeHandler}
-            // ref={passwordRef}
-            required
-          />
+          <input id="password" type="password" name="password" required />
         </p>
         <div className={classes.actions}>
           <button>Login</button>

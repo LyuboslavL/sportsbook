@@ -10,6 +10,7 @@ import TennisPage, { loader as tennisLoader } from "./pages/Tennis";
 import ContactPage, { action as contactAction } from "./pages/Contact";
 import LoginPage, { action as loginAction } from "./pages/Login";
 import RegisterPage, { action as registerAction } from "./pages/Register";
+import AboutPage from "./pages/About";
 // import { checkTokenLoader, tokenLoader } from "./util/auth";
 
 const router = createBrowserRouter([
@@ -46,6 +47,7 @@ const router = createBrowserRouter([
         children: [],
       },
       { path: "contact", element: <ContactPage />, action: contactAction },
+      { path: "about", element: <AboutPage /> },
       {
         path: "login",
         element: <LoginPage />,

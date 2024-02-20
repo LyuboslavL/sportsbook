@@ -17,15 +17,27 @@ export async function action({ request }) {
     password: data.get("password"),
   };
 
-  signInWithEmailAndPassword(auth, authData.email, authData.password)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
+  let hasError = false;
+
+  try {
+    await signInWithEmailAndPassword(
+      auth,
+      authData.email,
+      authData.password
+    ).then((userCredentials) => {
+      const user = userCredentials.user;
+      hasError = false;
       localStorage.setItem("token", user.uid);
-    })
-    .catch((error) => {
-      const errorMessage = error.message;
-      alert(errorMessage);
     });
-  return redirect("/");
+  } catch (error) {
+    const errorMessage = error.message;
+    data.error = errorMessage;
+    hasError = true;
+  }
+
+  if (hasError) {
+    alert("Wrong username or password.");
+  } else {
+    return redirect("/");
+  }
 }

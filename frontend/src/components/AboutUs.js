@@ -1,11 +1,14 @@
 import classes from "./AboutUs.module.css";
 
-import photo from "../assets/Photo.PNG";
+import Lyubo from "../assets/Lyubo.jpg";
+import Wifey from "../assets/Wifey.jpg";
+import Pupesh from "../assets/Pupesh.jpg";
 
 function AboutUs() {
   return (
     <>
       <div className={classes.about}>
+        <h1>About Us</h1>
         <p>We offer a solution for all sports enthusiasts.</p>
         <p>
           Our app allows users to book basketball courts, football pitches,
@@ -24,12 +27,42 @@ function AboutUs() {
       <div className={classes.row}>
         <div className={classes.column}>
           <div className={classes.card}>
-            <img src="" alt="" />
+            <img src={Lyubo} alt="Lyuboslav Lozanov" />
             <div className={classes.container}>
               <h2>Lyuboslav Lozanov</h2>
-              <img src={photo} alt="Lyuboslav Lozanov" />
               <p className={classes.title}>CEO & Founder</p>
+              <p>A bald guy with a passion for sports.</p>
               <p>lyuboslav.v.lozanov@gmail.com</p>
+              <p>
+                <button className={classes.button}>Contact</button>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className={classes.column}>
+          <div className={classes.card}>
+            <img src={Pupesh} alt="Pupesh" />
+            <div className={classes.container}>
+              <h2>Pupesh (aka Melon)</h2>
+              <p className={classes.title}>President</p>
+              <p>Furry fella in charge of eating all the food in the world.</p>
+              <p>pupesh_the_dog@gmail.com</p>
+              <p>
+                <button className={classes.button}>Contact</button>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className={classes.column}>
+          <div className={classes.card}>
+            <img src={Wifey} alt="Victoria Lozanova" />
+            <div className={classes.container}>
+              <h2>Victoria Lozanova</h2>
+              <p className={classes.title}>The REAL Boss</p>
+              <p>The real boss hiding in the shadows.</p>
+              <p>viktoria.lozanova@gmail.com</p>
               <p>
                 <button className={classes.button}>Contact</button>
               </p>

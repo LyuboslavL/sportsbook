@@ -27,11 +27,18 @@ function AboutUs() {
       <div className={classes.row}>
         <div className={classes.column}>
           <div className={classes.card}>
-            <img src={Lyubo} alt="Lyuboslav Lozanov" />
+            <img
+              className={classes.photo}
+              src={Lyubo}
+              alt="Lyuboslav Lozanov"
+            />
             <div className={classes.container}>
               <h2>Lyuboslav Lozanov</h2>
               <p className={classes.title}>CEO & Founder</p>
-              <p>A bald guy with a passion for sports.</p>
+              <p>
+                A bald guy with a passion for sports. The type of person some
+                people say he's never undressed in the locker rooms in school.
+              </p>
               <p>lyuboslav.v.lozanov@gmail.com</p>
               <p>
                 <button className={classes.button}>Contact</button>
@@ -42,11 +49,14 @@ function AboutUs() {
 
         <div className={classes.column}>
           <div className={classes.card}>
-            <img src={Pupesh} alt="Pupesh" />
+            <img className={classes.photo} src={Pupesh} alt="Pupesh" />
             <div className={classes.container}>
               <h2>Pupesh (aka Melon)</h2>
               <p className={classes.title}>President</p>
-              <p>Furry fella in charge of eating all the food in the world.</p>
+              <p>
+                Furry fella in charge of eating all the food in the world. Also
+                likes to eat the walls in our apartment.
+              </p>
               <p>pupesh_the_dog@gmail.com</p>
               <p>
                 <button className={classes.button}>Contact</button>
@@ -57,11 +67,18 @@ function AboutUs() {
 
         <div className={classes.column}>
           <div className={classes.card}>
-            <img src={Wifey} alt="Victoria Lozanova" />
+            <img
+              className={classes.photo}
+              src={Wifey}
+              alt="Victoria Lozanova"
+            />
             <div className={classes.container}>
               <h2>Victoria Lozanova</h2>
               <p className={classes.title}>The REAL Boss</p>
-              <p>The real boss hiding in the shadows.</p>
+              <p>
+                The real boss hiding in the shadows. She is the "Grey Cardinal"
+                calling all the shots.
+              </p>
               <p>viktoria.lozanova@gmail.com</p>
               <p>
                 <button className={classes.button}>Contact</button>

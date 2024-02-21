@@ -10,7 +10,7 @@ h2 {
   color: black;
 }
 
-img {
+.photo {
   width: 420px;
   height: 350px;
   margin: 5px 28px;
@@ -41,7 +41,12 @@ img {
 }
 
 .title {
-  color: grey;
+  text-align: center;
+  color: red;
+}
+
+.container > p {
+  color: black;
 }
 
 .button {

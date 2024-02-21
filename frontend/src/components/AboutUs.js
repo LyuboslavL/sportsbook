@@ -34,7 +34,9 @@ function AboutUs() {
             />
             <div className={classes.container}>
               <h2>Lyuboslav Lozanov</h2>
-              <p className={classes.title}>CEO & Founder</p>
+              <p className={classes.title}>
+                <em>CEO & Founder</em>
+              </p>
               <p>
                 A bald guy with a passion for sports. The type of person some
                 people say he's never undressed in the locker rooms in school.
@@ -52,7 +54,9 @@ function AboutUs() {
             <img className={classes.photo} src={Pupesh} alt="Pupesh" />
             <div className={classes.container}>
               <h2>Pupesh (aka Melon)</h2>
-              <p className={classes.title}>President</p>
+              <p className={classes.title}>
+                <em>President</em>
+              </p>
               <p>
                 Furry fella in charge of eating all the food in the world. Also
                 likes to eat the walls in our apartment.
@@ -74,7 +78,9 @@ function AboutUs() {
             />
             <div className={classes.container}>
               <h2>Victoria Lozanova</h2>
-              <p className={classes.title}>The REAL Boss</p>
+              <p className={classes.title}>
+                <em>The REAL Boss</em>
+              </p>
               <p>
                 The real boss hiding in the shadows. She is the "Grey Cardinal"
                 calling all the shots.

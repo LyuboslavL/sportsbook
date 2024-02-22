@@ -4,7 +4,6 @@ import { collection, getDocs } from "firebase/firestore";
 import { useLoaderData } from "react-router-dom";
 
 import PlacesList from "../components/PlacesList";
-import TownsList from "../components/TownsList";
 
 function BasketballPage() {
   const basketballPlaces = useLoaderData();

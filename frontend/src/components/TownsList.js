@@ -4,14 +4,13 @@ import classes from "./TownsList.module.css";
 
 function TownsList({ towns }, proceed, chosenCity) {
   const onChosenCity = (event) => {
-    proceed = true;
-    chosenCity = event.target.key;
+    console.log(event.target);
   };
 
   return (
     <ul id={classes.towns}>
       {towns.map((town) => (
-        <Town key={town.id} town={town} onClick={onChosenCity} />
+        <Town town={town} onClick={onChosenCity} key={town.id} />
       ))}
     </ul>
   );

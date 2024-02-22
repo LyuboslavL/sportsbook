@@ -19,7 +19,11 @@ const TOWNS = [
 ];
 
 function CitiesPage() {
-  return <TownsList towns={TOWNS} />;
+  const cityPickHandler = () => {
+    console.log("clicked");
+  };
+
+  return <TownsList towns={TOWNS} onClick={cityPickHandler} />;
 }
 
 export default CitiesPage;

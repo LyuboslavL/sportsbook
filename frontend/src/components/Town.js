@@ -1,7 +1,6 @@
 import classes from "./Town.module.css";
 
 function Town({ town }) {
-  // console.log(town.id);
   const onChosenCity = (event) => {
     console.log(event.target.parentNode.parentNode.id);
   };

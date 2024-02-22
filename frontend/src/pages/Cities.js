@@ -19,6 +19,9 @@ const TOWNS = [
 ];
 
 function CitiesPage() {
+  // Lifting the state up
+  // Use React Redux or Context API
+
   return <TownsList towns={TOWNS} />;
 }
 

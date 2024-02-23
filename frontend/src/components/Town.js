@@ -1,18 +1,16 @@
+import { Link } from "react-router-dom";
+
 import classes from "./Town.module.css";
 
 function Town({ town }) {
-  const onChosenCity = (event) => {
-    console.log(event.target.parentNode.parentNode.id);
-  };
-
   return (
-    <li className={classes.town} onClick={onChosenCity} id={town.id}>
-      <article>
-        <img src={town.img} alt="City" />
-        <button>
+    <li className={classes.town} id={town.id}>
+      <Link to="/football">
+        <article>
+          <img src={town.img} alt="City" />
           <h3>{town.name}</h3>
-        </button>
-      </article>
+        </article>
+      </Link>
     </li>
   );
 }

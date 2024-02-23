@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import classes from "./Town.module.css";
 
 function Town({ town }) {
+  const address = "/football?" + town.name;
   return (
     <li className={classes.town} id={town.id}>
-      <Link to="/football">
+      <Link to={address}>
         <article>
           <img src={town.img} alt="City" />
           <h3>{town.name}</h3>

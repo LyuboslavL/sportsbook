@@ -12,6 +12,7 @@ import ContactPage, { action as contactAction } from "./pages/Contact";
 import LoginPage, { action as loginAction } from "./pages/Login";
 import RegisterPage, { action as registerAction } from "./pages/Register";
 import AboutPage from "./pages/About";
+import PlacesRootLayout from "./pages/PlacesRoot";
 // import { checkTokenLoader, tokenLoader } from "./util/auth";
 
 const router = createBrowserRouter([
@@ -25,8 +26,12 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       {
         path: "/basketball",
-        element: <CitiesPage />,
+        element: <PlacesRootLayout />,
         children: [
+          {
+            index: true,
+            element: <CitiesPage />,
+          },
           {
             path: "Sofia",
             element: <BasketballPage />,

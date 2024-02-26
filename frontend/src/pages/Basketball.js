@@ -13,10 +13,9 @@ function BasketballPage() {
 
 export default BasketballPage;
 
-export async function loader({ request }) {
-  const searchParams = new URL(request.url).searchParams;
-  const city = searchParams.get('key');
-
+export async function loader() {
+  // const searchParams = new URL(request.url).searchParams;
+  // const city = searchParams.get('key');
 
   const querySnapshot = await getDocs(collection(db, "basketball"));
   const data = [];

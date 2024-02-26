@@ -3,7 +3,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import RootLayout from "./pages/Root";
 import ErrorPage from "./pages/Error";
 import HomePage from "./pages/Home";
-// import CitiesPage from "./pages/Cities";
+import CitiesPage from "./pages/Cities";
 import BasketballPage, { loader as basketballLoader } from "./pages/Basketball";
 import FootballPage, { loader as footballLoader } from "./pages/Football";
 import VolleyballPage, { loader as volleyballLoader } from "./pages/Volleyball";
@@ -24,10 +24,15 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       {
-        path: "basketball",
-        element: <BasketballPage />,
-        loader: basketballLoader,
-        children: [],
+        path: "/basketball",
+        element: <CitiesPage />,
+        children: [
+          {
+            path: "Sofia",
+            element: <BasketballPage />,
+            loader: basketballLoader,
+          },
+        ],
       },
       {
         path: "football",

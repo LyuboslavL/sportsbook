@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import classes from "./Town.module.css";
 
 function Town({ town }) {
-  const address = "/basketball?key=" + town.name;
+  const address = town.name;
   return (
     <li className={classes.town} id={town.id}>
       <Link to={address}>

@@ -28,10 +28,7 @@ const router = createBrowserRouter([
         path: "/basketball",
         element: <PlacesRootLayout />,
         children: [
-          {
-            index: true,
-            element: <CitiesPage />,
-          },
+          { index: true, element: <CitiesPage /> },
           {
             path: "Sofia",
             element: <BasketballPage />,
@@ -50,10 +47,12 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "football",
-        element: <FootballPage />,
-        loader: footballLoader,
-        children: [],
+        path: "/football",
+        element: <PlacesRootLayout />,
+        children: [
+          { index: true, element: <CitiesPage /> },
+          { path: "Sofia", element: <FootballPage />, loader: footballLoader },
+        ],
       },
       {
         path: "volleyball",

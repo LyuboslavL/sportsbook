@@ -13,12 +13,22 @@ function FootballPage() {
 
 export default FootballPage;
 
-export async function loader() {
+export async function loader({ request }) {
+  const searchParams = new URL(request.url);
+
   const querySnapshot = await getDocs(collection(db, "football"));
-  const data = [];
+  let data = [];
   querySnapshot.forEach((doc) => {
     data.push({ id: doc.id, ...doc.data() });
   });
+
+  if (searchParams.pathname.includes("Sofia")) {
+    data = data.filter((place) => place.city === "Sofia");
+  } else if (searchParams.pathname.includes("Plovdiv")) {
+    data = data.filter((place) => place.city === "Plovdiv");
+  } else if (searchParams.pathname.includes("Varna")) {
+    data = data.filter((place) => place.city === "Varna");
+  }
 
   return data;
 }

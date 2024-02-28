@@ -18,6 +18,7 @@ export async function loader({ request }) {
   // console.log(searchParams.pathname.includes("Sofia"));
 
   const querySnapshot = await getDocs(collection(db, "basketball"));
+  // const q = query(citiesRef, where("city", "==", "Sofia"));
 
   let data = [];
   querySnapshot.forEach((doc) => {
@@ -31,6 +32,6 @@ export async function loader({ request }) {
   } else if (searchParams.pathname.includes("Varna")) {
     data = data.filter((place) => place.city === "Varna");
   }
-  console.log(data);
+
   return data;
 }

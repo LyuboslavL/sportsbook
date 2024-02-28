@@ -37,6 +37,16 @@ const router = createBrowserRouter([
             element: <BasketballPage />,
             loader: basketballLoader,
           },
+          {
+            path: "Plovdiv",
+            element: <BasketballPage />,
+            loader: basketballLoader,
+          },
+          {
+            path: "Varna",
+            element: <BasketballPage />,
+            loader: basketballLoader,
+          },
         ],
       },
       {

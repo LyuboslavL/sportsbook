@@ -15,8 +15,8 @@ export default BasketballPage;
 
 export async function loader({ request }) {
   const searchParams = new URL(request.url);
-  console.log(searchParams.pathname.includes("Plovdiv"));
-  const city = searchParams.get("key");
+  console.log(searchParams.pathname.includes("Sofia"));
+  console.log(searchParams.pathname);
 
   const querySnapshot = await getDocs(collection(db, "basketball"));
   const data = [];

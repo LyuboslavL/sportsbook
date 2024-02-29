@@ -52,19 +52,57 @@ const router = createBrowserRouter([
         children: [
           { index: true, element: <CitiesPage /> },
           { path: "Sofia", element: <FootballPage />, loader: footballLoader },
+          {
+            path: "Plovdiv",
+            element: <FootballPage />,
+            loader: footballLoader,
+          },
+          { path: "Varna", element: <FootballPage />, loader: footballLoader },
         ],
       },
       {
         path: "volleyball",
-        element: <VolleyballPage />,
-        loader: volleyballLoader,
-        children: [],
+        element: <PlacesRootLayout />,
+        children: [
+          { index: true, element: <CitiesPage /> },
+          {
+            path: "Sofia",
+            element: <VolleyballPage />,
+            loader: volleyballLoader,
+          },
+          {
+            path: "Plovdiv",
+            element: <VolleyballPage />,
+            loader: volleyballLoader,
+          },
+          {
+            path: "Varna",
+            element: <VolleyballPage />,
+            loader: volleyballLoader,
+          },
+        ],
       },
       {
         path: "tennis",
-        element: <TennisPage />,
-        loader: tennisLoader,
-        children: [],
+        element: <PlacesRootLayout />,
+        children: [
+          { index: true, element: <CitiesPage /> },
+          {
+            path: "Sofia",
+            element: <TennisPage />,
+            loader: tennisLoader,
+          },
+          {
+            path: "Plovdiv",
+            element: <TennisPage />,
+            loader: tennisLoader,
+          },
+          {
+            path: "Varna",
+            element: <TennisPage />,
+            loader: tennisLoader,
+          },
+        ],
       },
       { path: "contact", element: <ContactPage />, action: contactAction },
       { path: "about", element: <AboutPage /> },
